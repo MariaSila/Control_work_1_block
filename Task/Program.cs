@@ -8,3 +8,25 @@
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → []
 */
+
+int LengthArray(string message)
+{
+    Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine()!);
+    return result;
+}
+
+string [] GetArray(int length)
+{
+    string[] array = new string[length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write("Введите значение массива: ");
+        array[i] = (Console.ReadLine()!);
+    }
+    return array;
+}
+
+int length = LengthArray("Введите количество элементов в массиве: ");
+GetArray(length);
+
