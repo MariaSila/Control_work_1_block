@@ -27,6 +27,14 @@ string [] GetArray(int length)
     return array;
 }
 
+void PrintArray (string message, string[] array)
+{
+    Console.WriteLine();
+    Console.Write(message);
+    Console.WriteLine("[" + string.Join(", ", array) + "]");
+    Console.WriteLine();
+}
+
 int length = LengthArray("Введите количество элементов в массиве: ");
-GetArray(length);
+PrintArray("Начальный массив: ", GetArray(length));
 
