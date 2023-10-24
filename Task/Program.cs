@@ -27,14 +27,15 @@ string [] GetArray(int length)
     return array;
 }
 
-string[] CountSymbolsInElement(string[] array)
+string[] CountSymbolsInElement(string[] array, int string_length = 3)
 {
+    
     string[] temp = new string[array.Length];
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
         string element = array[i];
-        if (element.Length <= 3)
+        if (element.Length <= string_length)
         {
            temp[count] = element;
            count++;
