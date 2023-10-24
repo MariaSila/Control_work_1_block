@@ -27,6 +27,28 @@ string [] GetArray(int length)
     return array;
 }
 
+string[] CountSymbolsInElement(string[] array)
+{
+    string[] temp = new string[array.Length];
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        string element = array[i];
+        if (element.Length <= 3)
+        {
+           temp[count] = element;
+           count++;
+        }
+    }
+
+    string[] result = new string[count];
+    for (int i = 0; i < result.Length; i++)
+    {
+        result[i] = temp[i];
+    }
+    return result;
+}
+
 void PrintArray (string message, string[] array)
 {
     Console.WriteLine();
@@ -36,5 +58,7 @@ void PrintArray (string message, string[] array)
 }
 
 int length = LengthArray("Введите количество элементов в массиве: ");
-PrintArray("Начальный массив: ", GetArray(length));
-
+string[] massive = GetArray(length);
+PrintArray("Начальный массив: ", massive);
+string[] result = CountSymbolsInElement(massive);
+PrintArray("Конечный массив: ", result);
